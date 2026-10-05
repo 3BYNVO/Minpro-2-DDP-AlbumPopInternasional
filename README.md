@@ -44,3 +44,4 @@ B. Flowchart
 2. **`merchandise_gratis()`** mencetak pesan pembuka, menjalankan hitung mundur dari 5 sampai 1 (cetak angka, jeda 1 detik), memilih satu merchandise secara acak dari `["T-shirt", "Poster", "Stiker", "Topi"]`, lalu mencetak hasil dan petunjuk klaim.
 
 C.Dokumentasi Program & Output
+> Output di bawah ini menunjukkan tampilan teks yang dihasilkan program untuk skenario contoh. Layar dibersihkan (`cls`/`clear`) di setiap perpindahan menu, sehingga tiap blok menunjukkan satu layar.

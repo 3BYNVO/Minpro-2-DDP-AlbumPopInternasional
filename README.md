@@ -16,5 +16,4 @@ Program memiliki sistem **login berbasis peran (role)** dengan batas 3 kali perc
 
 Fitur pendukung: validasi input kosong (`input_teks`), validasi rating angka dengan rentang lebih dari 0 sampai 5 (`input_rating`), pembersihan layar otomatis, dan hitung mundur 5 detik pada fitur merchandise teracak.
 
-2. Gambar flowchart serta penjelasan alurnya
-
+2. Gambar flowchart sebagai berikut.

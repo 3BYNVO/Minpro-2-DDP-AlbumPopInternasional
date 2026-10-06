@@ -5,7 +5,7 @@ Kelas: A
 
 NIM:2609116009
 
-A. Deskripsi Singkat Program
+**A. Deskripsi Singkat Program**
 
 **Nada Internasional** adalah program berbahasa Python untuk mengelola daftar album pop internasional beserta rating-nya. Data disimpan dalam list `Album_Pop` (nama album, nama artis, rating).
 
@@ -29,9 +29,9 @@ Program memiliki sistem **login berbasis peran (role)** dengan batas 3 kali perc
 
 Fitur pendukung: validasi input kosong (`input_teks`), validasi rating angka dengan rentang lebih dari 0 sampai 5 (`input_rating`), pembersihan layar otomatis, dan hitung mundur 5 detik pada fitur merchandise teracak.
 
-B. Flowchart
+**B. Flowchart**
 
-C. Penjelasan Program dan Output
+**C. Penjelasan Program dan Output**
 
 Setiap Bagian Kode Program Album Pop (struktur data, validasi, login, menu, lihat, tambah, ubah rating, hapus, merchandise, logout, main) memiliki penjelasan dan output sebagai berikut.
 

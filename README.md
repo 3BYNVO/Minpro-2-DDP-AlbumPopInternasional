@@ -51,6 +51,6 @@ C.Dokumentasi Program & Output
 > Layar dibersihkan (`cls`/`clear`) di setiap perpindahan menu, sehingga tiap blok menunjukkan satu layar.
 
 1. Data Awal dan Konfigurasi
-<img width="1858" height="1094" alt="1" src="https://github.com/user-attachments/assets/e5001cb6-e698-40d4-a9cf-fefaa83108f2" />
+<img width="1858" height="779" alt="1" src="https://github.com/user-attachments/assets/b8cd34ff-b839-4070-a2a6-ab603dcbe623" />
 
-`Album_Pop` adalah list berisi list `[album, artis, rating]` sebagai penyimpanan data selama program berjalan (tidak disimpan ke file). `RATING_MIN`, `RATING_MAX`, dan `MAKS_PERCOBAAN_LOGIN` adalah konstanta batas validasi. `Akun` adalah dictionary untuk autentikasi dan penentuan role.
+`Album_Pop` adalah list berisi list `[album, artis, rating]` sebagai penyimpanan data selama program berjalan (tidak disimpan ke file). `RATING_MIN`, `RATING_MAX`, dan `MAKS_PERCOBAAN_LOGIN` adalah konstanta batas validasi. 

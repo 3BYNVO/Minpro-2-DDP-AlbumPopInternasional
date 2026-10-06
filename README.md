@@ -82,9 +82,11 @@ def login(): ...
 **Penjelasan:** `menu_awal` menampilkan pilihan Login/Keluar. `login` meminta username dan password (disamarkan dengan `pwinput`), mencocokkannya dengan dictionary `Akun`, memberi maksimal 3 percobaan, dan mengembalikan `(username, role)` jika berhasil atau `None` jika gagal.
 
 **Output menu awal:**
+
 <img width="356" height="117" alt="1menu awal" src="https://github.com/user-attachments/assets/0932d596-fa1e-4b10-a7ef-2026d3e10a7b" />
 
 **Output login berhasil:**
+
 <img width="422" height="153" alt="7login admin" src="https://github.com/user-attachments/assets/4a3a0885-cede-47c2-99d4-18953136d573" />
 
 **Output login gagal (3 kali):**
@@ -113,9 +115,11 @@ def menu_utama(username, role): ...
 **Penjelasan:** Menu disimpan sebagai dictionary berisi label dan fungsi. `menu_utama` memilih menu sesuai role, menampilkan pilihan, memvalidasi input, lalu memanggil fungsi terkait. Pilihan dengan fungsi `None` berarti logout.
 
 **Output menu admin:**
+
 <img width="376" height="173" alt="8menu admin" src="https://github.com/user-attachments/assets/14d28d67-fadb-4333-ad78-7003c80c242c" />
 
 **Output menu user:**
+
 <img width="362" height="132" alt="3menu user" src="https://github.com/user-attachments/assets/665e320f-47b5-44f2-8e79-4d21d2bc0d59" />
 
 ### 5. Lihat Daftar Album (Admin & User)
@@ -126,6 +130,7 @@ def lihat_album():
 **Penjelasan:** Menampilkan seluruh album dalam bentuk tabel.
 
 **Output:**
+
 <img width="441" height="246" alt="4daftar album" src="https://github.com/user-attachments/assets/01e22e3b-8c15-4854-935a-e64d245e6795" />
 
 ### 6. Tambah Album (Admin)
@@ -143,6 +148,7 @@ def tambah_album():
 **Penjelasan:** Admin dapat menambah banyak album sekaligus. Perulangan berhenti saat mengetik `selesai`. Setiap album baru dimasukkan ke `Album_Pop` dan tabel diperbarui.
 
 **Output:**
+
 <img width="436" height="328" alt="10tambah album admin" src="https://github.com/user-attachments/assets/e4b49204-0aaa-4788-afff-2f15f617bee6" />
 
 ### 7. Ubah Rating Album (Admin)
@@ -160,6 +166,7 @@ def ubah_rating():
 **Penjelasan:** Album dicari berdasarkan nama (tidak peka huruf besar/kecil). Jika ketemu, rating diganti dengan input baru yang tervalidasi. Jika tidak ditemukan (`for-else`), pengguna diminta mengulang.
 
 **Output berhasil:**
+
 <img width="433" height="328" alt="11rating admin" src="https://github.com/user-attachments/assets/d1d0802e-ced7-4962-a6f7-28925a3d26cb" />
 
 **Output album tidak ditemukan:**
@@ -178,6 +185,7 @@ def hapus_album():
 **Penjelasan:** Program memeriksa apakah nama album ada. Jika ada, list dibuat ulang tanpa album tersebut (list comprehension). Jika tidak, pengguna diminta mengulang input.
 
 **Output berhasil:**
+
 <img width="442" height="327" alt="12hapus admin" src="https://github.com/user-attachments/assets/597e6a83-1117-4f8e-9498-87dcde4ba8ec" />
 
 **Output album tidak ditemukan:**
@@ -197,10 +205,12 @@ def merchandise_gratis():
 **Penjelasan:** Menampilkan hitung mundur 5 detik, lalu memilih satu merchandise secara acak (T-shirt, Poster, Stiker, Topi, atau Mug) dengan `random.choice`.
 
 **Output (contoh):**
+
 <img width="742" height="222" alt="5doorprize user" src="https://github.com/user-attachments/assets/c52bc83e-9d4e-4365-8b6f-f9f86f607407" />
 
 ### 10. Logout & Keluar
 **Output logout:**
+
 <img width="536" height="235" alt="13logout admin" src="https://github.com/user-attachments/assets/a6bfa081-93e2-4736-8b52-569de754aacc" />
 
 **Penjelasan:** Saat logout, `menu_utama` selesai (`return`), lalu `main()` mencetak pesan penutup dan program berakhir.

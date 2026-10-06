@@ -31,7 +31,7 @@ B. Flowchart
 
 C. Penjelasan Program dan Output
 
-### 1 Struktur Data & Konfigurasi
+### 1. Struktur Data & Konfigurasi
 ```python
 Album_Pop = [
     {"nama": "Petal", "artis": "Ariana Grande", "rating": 4.7},
@@ -47,7 +47,7 @@ Akun = {
 ```
 **Penjelasan:** `Album_Pop` adalah list berisi dictionary (nama, artis, rating) sebagai data utama. `Akun` menyimpan username, password, dan role. Konstanta rating dan batas login dibuat terpisah agar mudah diubah.
 
-### 2 Fungsi Bantu (Validasi & Tampilan)
+### 2. Fungsi Bantu (Validasi & Tampilan)
 ```python
 def tampilkan_daftar():
     tabel = PrettyTable()
@@ -74,7 +74,7 @@ Rating Album: 7
 Rating harus lebih dari 0.0 dan maksimal 5.0, silakan ulangi.
 ```
 
-### 3 Menu Awal & Login
+### 3. Menu Awal & Login
 ```python
 def menu_awal(): ...
 def login(): ...
@@ -115,7 +115,7 @@ Login gagal 3 kali. Program ditutup.
 Terima kasih telah mendengarkan Nada Internasional!
 ```
 
-### 4 Menu Utama
+### 4. Menu Utama
 ```python
 MENU_ADMIN = {"1": ("Lihat Daftar Album Pop", lihat_album), ... "5": ("Logout", None)}
 MENU_USER  = {"1": ("Lihat Daftar Album Pop", lihat_album), "2": ("Merchandise Gratis", merchandise_gratis), "3": ("Logout", None)}
@@ -143,7 +143,7 @@ Nada Internasional | Login sebagai: user (user)
 Pilih menu anda: (1-3):
 ```
 
-### 5 Lihat Daftar Album (Admin & User)
+### 5. Lihat Daftar Album (Admin & User)
 ```python
 def lihat_album():
     tampilkan_daftar()
@@ -165,7 +165,7 @@ def lihat_album():
 Tekan Enter untuk kembali ke menu album...
 ```
 
-### 6 Tambah Album (Admin)
+### 6. Tambah Album (Admin)
 ```python
 def tambah_album():
     ...
@@ -199,7 +199,7 @@ Album 'Folklore' telah ditambahkan ke daftar.
 Tambahkan Album Anda : selesai
 ```
 
-### 7 Ubah Rating Album (Admin)
+### 7. Ubah Rating Album (Admin)
 ```python
 def ubah_rating():
     ...
@@ -235,7 +235,7 @@ Masukkan Album yang ingin diubah ratingnya: abc
 Album 'abc' tidak ditemukan dalam daftar, input kembali.
 ```
 
-### 8 Hapus Album (Admin)
+### 8. Hapus Album (Admin)
 ```python
 def hapus_album():
     global Album_Pop
@@ -264,7 +264,7 @@ Album yang akan dihapus dari daftar: xyz
 Album 'xyz' tidak ditemukan dalam daftar, input kembali.
 ```
 
-### 9 Merchandise Gratis (User)
+### 9. Merchandise Gratis (User)
 ```python
 def merchandise_gratis():
     for i in range(5, 0, -1):
@@ -286,7 +286,7 @@ Selamat! Anda mendapatkan Poster dari Nada Internasional!
 Silakan kunjungi website resmi kami untuk klaim merchandise.
 ```
 
-### 10 Logout & Keluar
+### 10. Logout & Keluar
 **Output logout:**
 ```
 Sampai jumpa, admin! Anda telah logout.
@@ -294,7 +294,7 @@ Terima kasih telah mendengarkan Nada Internasional!
 ```
 **Penjelasan:** Saat logout, `menu_utama` selesai (`return`), lalu `main()` mencetak pesan penutup dan program berakhir.
 
-### 11 Fungsi Utama
+### 11. Fungsi Utama
 ```python
 def main():
     sesi = menu_awal()

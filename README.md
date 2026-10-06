@@ -5,7 +5,7 @@ Muhammad Ihsan_A_009
 
 A. Deskripsi Singkat Program
 
-**Nada Internasional** adalah program berbahasa Python untuk mengelola daftar album pop internasional beserta rating-nya. Data disimpan dalam list `Album_Pop` (judul album, nama artis, rating).
+**Nada Internasional** adalah program berbahasa Python untuk mengelola daftar album pop internasional beserta rating-nya. Data disimpan dalam list `Album_Pop` (nama album, nama artis, rating).
 
 **Library yang digunakan**
 

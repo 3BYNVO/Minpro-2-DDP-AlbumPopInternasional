@@ -82,21 +82,10 @@ def login(): ...
 **Penjelasan:** `menu_awal` menampilkan pilihan Login/Keluar. `login` meminta username dan password (disamarkan dengan `pwinput`), mencocokkannya dengan dictionary `Akun`, memberi maksimal 3 percobaan, dan mengembalikan `(username, role)` jika berhasil atau `None` jika gagal.
 
 **Output menu awal:**
-```
-Selamat datang di Nada Internasional Anda!
-1. Login
-2. Keluar
-Pilih menu anda (1-2): 1
-```
+<img width="356" height="117" alt="1menu awal" src="https://github.com/user-attachments/assets/0932d596-fa1e-4b10-a7ef-2026d3e10a7b" />
 
 **Output login berhasil:**
-```
-=== AKUN NADA INTERNASIONAL ===
-Username : admin
-Password : ********
-
-Login berhasil! Selamat datang, admin (role: admin).
-```
+<img width="422" height="153" alt="7login admin" src="https://github.com/user-attachments/assets/4a3a0885-cede-47c2-99d4-18953136d573" />
 
 **Output login gagal (3 kali):**
 ```
@@ -124,24 +113,10 @@ def menu_utama(username, role): ...
 **Penjelasan:** Menu disimpan sebagai dictionary berisi label dan fungsi. `menu_utama` memilih menu sesuai role, menampilkan pilihan, memvalidasi input, lalu memanggil fungsi terkait. Pilihan dengan fungsi `None` berarti logout.
 
 **Output menu admin:**
-```
-Nada Internasional | Login sebagai: admin (admin)
-1. Lihat Daftar Album Pop
-2. Tambahkan Album Favorit
-3. Ubah Rating Album
-4. Hapus Album
-5. Logout
-Pilih menu anda: (1-5):
-```
+<img width="376" height="173" alt="8menu admin" src="https://github.com/user-attachments/assets/14d28d67-fadb-4333-ad78-7003c80c242c" />
 
 **Output menu user:**
-```
-Nada Internasional | Login sebagai: user (user)
-1. Lihat Daftar Album Pop
-2. Merchandise Gratis
-3. Logout
-Pilih menu anda: (1-3):
-```
+<img width="362" height="132" alt="3menu user" src="https://github.com/user-attachments/assets/665e320f-47b5-44f2-8e79-4d21d2bc0d59" />
 
 ### 5. Lihat Daftar Album (Admin & User)
 ```python
@@ -151,19 +126,7 @@ def lihat_album():
 **Penjelasan:** Menampilkan seluruh album dalam bentuk tabel.
 
 **Output:**
-```
-+----+-----------------------+----------------+--------+
-| No |         Album         |     Artis      | Rating |
-+----+-----------------------+----------------+--------+
-| 1  |         Petal         | Ariana Grande  |  4.7   |
-| 2  |      YSPSFAGSIL       | Olivia Rodrigo |  4.9   |
-| 3  |         brat          |   Charli XCX   |  3.9   |
-| 4  | WOR$T GIRL IN AMERICA |   Slayyyter    |  4.0   |
-| 5  |          LUX          |    Rosalia     |  4.3   |
-+----+-----------------------+----------------+--------+
-
-Tekan Enter untuk kembali ke menu album...
-```
+<img width="441" height="246" alt="4daftar album" src="https://github.com/user-attachments/assets/01e22e3b-8c15-4854-935a-e64d245e6795" />
 
 ### 6. Tambah Album (Admin)
 ```python
@@ -180,24 +143,7 @@ def tambah_album():
 **Penjelasan:** Admin dapat menambah banyak album sekaligus. Perulangan berhenti saat mengetik `selesai`. Setiap album baru dimasukkan ke `Album_Pop` dan tabel diperbarui.
 
 **Output:**
-```
-Ketik 'selesai' jika anda merasa cukup dengan albumnya.
-Tambahkan Album Anda : Folklore
-Tambahkan Artis : Taylor Swift
-Rating Album: 4.8
-Album 'Folklore' telah ditambahkan ke daftar.
-+----+-----------------------+----------------+--------+
-| No |         Album         |     Artis      | Rating |
-+----+-----------------------+----------------+--------+
-| 1  |         Petal         | Ariana Grande  |  4.7   |
-| 2  |      YSPSFAGSIL       | Olivia Rodrigo |  4.9   |
-| 3  |         brat          |   Charli XCX   |  3.9   |
-| 4  | WOR$T GIRL IN AMERICA |   Slayyyter    |  4.0   |
-| 5  |          LUX          |    Rosalia     |  4.3   |
-| 6  |       Folklore        |  Taylor Swift  |  4.8   |
-+----+-----------------------+----------------+--------+
-Tambahkan Album Anda : selesai
-```
+<img width="436" height="328" alt="10tambah album admin" src="https://github.com/user-attachments/assets/e4b49204-0aaa-4788-afff-2f15f617bee6" />
 
 ### 7. Ubah Rating Album (Admin)
 ```python
@@ -214,20 +160,7 @@ def ubah_rating():
 **Penjelasan:** Album dicari berdasarkan nama (tidak peka huruf besar/kecil). Jika ketemu, rating diganti dengan input baru yang tervalidasi. Jika tidak ditemukan (`for-else`), pengguna diminta mengulang.
 
 **Output berhasil:**
-```
-Masukkan Album yang ingin diubah ratingnya: BRAT
-Masukkan rating baru: 4.5
-Rating untuk album 'brat' telah diperbarui menjadi 4.5.
-+----+-----------------------+----------------+--------+
-| No |         Album         |     Artis      | Rating |
-+----+-----------------------+----------------+--------+
-| 1  |         Petal         | Ariana Grande  |  4.7   |
-| 2  |      YSPSFAGSIL       | Olivia Rodrigo |  4.9   |
-| 3  |         brat          |   Charli XCX   |  4.5   |
-| 4  | WOR$T GIRL IN AMERICA |   Slayyyter    |  4.0   |
-| 5  |          LUX          |    Rosalia     |  4.3   |
-+----+-----------------------+----------------+--------+
-```
+<img width="433" height="328" alt="11rating admin" src="https://github.com/user-attachments/assets/d1d0802e-ced7-4962-a6f7-28925a3d26cb" />
 
 **Output album tidak ditemukan:**
 ```
@@ -245,18 +178,7 @@ def hapus_album():
 **Penjelasan:** Program memeriksa apakah nama album ada. Jika ada, list dibuat ulang tanpa album tersebut (list comprehension). Jika tidak, pengguna diminta mengulang input.
 
 **Output berhasil:**
-```
-Album yang akan dihapus dari daftar: LUX
-Album 'LUX' telah dihapus dari daftar.
-+----+-----------------------+----------------+--------+
-| No |         Album         |     Artis      | Rating |
-+----+-----------------------+----------------+--------+
-| 1  |         Petal         | Ariana Grande  |  4.7   |
-| 2  |      YSPSFAGSIL       | Olivia Rodrigo |  4.9   |
-| 3  |         brat          |   Charli XCX   |  3.9   |
-| 4  | WOR$T GIRL IN AMERICA |   Slayyyter    |  4.0   |
-+----+-----------------------+----------------+--------+
-```
+<img width="442" height="327" alt="12hapus admin" src="https://github.com/user-attachments/assets/597e6a83-1117-4f8e-9498-87dcde4ba8ec" />
 
 **Output album tidak ditemukan:**
 ```
@@ -275,23 +197,12 @@ def merchandise_gratis():
 **Penjelasan:** Menampilkan hitung mundur 5 detik, lalu memilih satu merchandise secara acak (T-shirt, Poster, Stiker, Topi, atau Mug) dengan `random.choice`.
 
 **Output (contoh):**
-```
-Anda akan mendapatkan merchandise acak secara gratis dari Nada Internasional dalam hitungan...
-5
-4
-3
-2
-1
-Selamat! Anda mendapatkan Poster dari Nada Internasional!
-Silakan kunjungi website resmi kami untuk klaim merchandise.
-```
+<img width="742" height="222" alt="5doorprize user" src="https://github.com/user-attachments/assets/c52bc83e-9d4e-4365-8b6f-f9f86f607407" />
 
 ### 10. Logout & Keluar
 **Output logout:**
-```
-Sampai jumpa, admin! Anda telah logout.
-Terima kasih telah mendengarkan Nada Internasional!
-```
+<img width="536" height="235" alt="13logout admin" src="https://github.com/user-attachments/assets/a6bfa081-93e2-4736-8b52-569de754aacc" />
+
 **Penjelasan:** Saat logout, `menu_utama` selesai (`return`), lalu `main()` mencetak pesan penutup dan program berakhir.
 
 ### 11. Fungsi Utama

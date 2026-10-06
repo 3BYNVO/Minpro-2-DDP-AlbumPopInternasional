@@ -1,8 +1,6 @@
 # Minpro-2-DDP-AlbumPopInternasional
 Muhammad Ihsan_A_009
 
-# Nada Internasional — Manajemen Album Pop Internasional
-
 A. Deskripsi Singkat Program
 
 **Nada Internasional** adalah program berbahasa Python untuk mengelola daftar album pop internasional beserta rating-nya. Data disimpan dalam list `Album_Pop` (nama album, nama artis, rating).

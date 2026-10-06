@@ -49,3 +49,5 @@ B. Flowchart
 
 C.Dokumentasi Program & Output
 > Layar dibersihkan (`cls`/`clear`) di setiap perpindahan menu, sehingga tiap blok menunjukkan satu layar.
+<img width="1878" height="801" alt="1" src="https://github.com/user-attachments/assets/33d0acb1-7054-4d71-8d16-c818ec042383" />
+`Album_Pop` adalah list berisi list `[album, artis, rating]` sebagai penyimpanan data selama program berjalan (tidak disimpan ke file). `RATING_MIN`, `RATING_MAX`, dan `MAKS_PERCOBAAN_LOGIN` adalah konstanta batas validasi. `Akun` adalah dictionary untuk autentikasi dan penentuan role.

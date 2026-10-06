@@ -97,7 +97,7 @@ Jika nama album tidak ditemukan, kode memanggil `ubah_rating()` lagi (rekursi).
 
 **5. Log Out** → "Sampai jumpa, [username]! Anda telah logout." → **END**.
 
-## 4. Alur User (hijau)
+**4. Alur User (hijau)**
 
 Menu user (1-3) memakai `MENU_USER`:
 

@@ -35,86 +35,85 @@ Flowchart dibagi menjadi tiga warna: abu-biru (awal & login), merah/salmon (role
 
 <img width="1982" height="1722" alt="Flowchart Nada  drawio" src="https://github.com/user-attachments/assets/9069c990-cffd-4865-a48c-a00819b8a538" />
 
-1. Awal & Login (abu-biru)
+## 1. Awal & Login (abu-biru)
 
-START → Menu Awal. main() memanggil menu_awal(), yang membersihkan layar lalu menampilkan:
-
+**START → Menu Awal.** `main()` memanggil `menu_awal()`, yang membersihkan layar lalu menampilkan:
+```
 Selamat datang di Nada Internasional Anda!
 1. Login
 2. Keluar
+```
 
-Percabangan "1. Login"
+**Percabangan "1. Login"**
+- **Ya (pilih 1)** → `login()`.
+- **Tidak** → "2. Keluar" → **END**, dengan pesan "Terima kasih telah mendengarkan Nada Internasional!".
+- Pilihan selain 1 dan 2 menampilkan "Pilihan tidak valid", lalu `menu_awal()` dipanggil lagi. Bagian ini tidak digambar.
 
-Ya (pilih 1) → login().
-Tidak → "2. Keluar" → END, dengan pesan "Terima kasih telah mendengarkan Nada Internasional!".
-Pilihan selain 1 dan 2 menampilkan "Pilihan tidak valid", lalu menu_awal() dipanggil lagi. Bagian ini tidak digambar.
+**Input Username → Input Password.** Username diubah ke huruf kecil (`.lower()`), dan password disembunyikan dengan `*` (`pwinput`). Datanya dicocokkan dengan dictionary `Akun`:
+- `admin` / `admin123` → role admin
+- `user` / `user123` → role user
 
-Input Username → Input Password. Username diubah ke huruf kecil (.lower()), dan password disembunyikan dengan * (pwinput). Datanya dicocokkan dengan dictionary Akun:
+**Login Gagal 1X → 2X → 3X.** Setiap salah, program menampilkan sisa percobaan (2, lalu 1). Setelah 3 kali gagal (`MAKS_PERCOBAAN_LOGIN = 3`), muncul "Login gagal 3 kali. Program ditutup." lalu menuju **END**. Itu garis panjang dari "Login Gagal 3X" ke END.
 
-admin / admin123 → role admin
-user / user123 → role user
+**Jika berhasil**, program mencetak "Login berhasil! Selamat datang..." dan `login()` mengembalikan `(username, role)`.
 
-Login Gagal 1X → 2X → 3X. Setiap salah, program menampilkan sisa percobaan (2, lalu 1). Setelah 3 kali gagal (MAKS_PERCOBAAN_LOGIN = 3), muncul "Login gagal 3 kali. Program ditutup." lalu menuju END. Itu garis panjang dari "Login Gagal 3X" ke END.
+## 2. Percabangan Role
 
-Jika berhasil, program mencetak "Login berhasil! Selamat datang..." dan login() mengembalikan (username, role).
-
-2. Percabangan Role
-python
+```python
 menu = MENU_ADMIN if role == "admin" else MENU_USER
-Role: Admin = ya → alur admin (merah).
-Tidak → Role: User (hijau).
-3. Alur Admin (merah)
+```
+- **Role: Admin = ya** → alur admin (merah).
+- **Tidak** → Role: User (hijau).
 
-Menu admin (1-5) tampil, lalu flowchart mengecek pilihan berurutan dari 1 sampai 5. "Tidak" berarti lanjut ke pilihan berikutnya. Di kode, ini dilakukan lewat dictionary MENU_ADMIN.
+## 3. Alur Admin (merah)
 
-1. Lihat Daftar Album
+Menu admin (1-5) tampil, lalu flowchart mengecek pilihan berurutan dari 1 sampai 5. "Tidak" berarti lanjut ke pilihan berikutnya. Di kode, ini dilakukan lewat dictionary `MENU_ADMIN`.
 
-lihat_album() menampilkan tabel PrettyTable (No, Album, Artis, Rating).
-Lalu "(Tekan Enter) sebelum kembali ke menu" (jeda()), dan kembali ke Daftar Menu Admin.
+**1. Lihat Daftar Album**
+- `lihat_album()` menampilkan tabel PrettyTable (No, Album, Artis, Rating).
+- Lalu **"(Tekan Enter) sebelum kembali ke menu"** (`jeda()`), dan kembali ke Daftar Menu Admin.
 
-2. Tambah Album → tambah_album()
+**2. Tambah Album** → `tambah_album()`
+1. Input nama album
+2. Input nama artis
+3. Input rating, dicek dengan syarat **0 < rating ≤ 5**
+4. **Valid ("ya")** → data masuk ke `Album_Pop` ("Menyimpan Data Baru Album") → "(Tekan Enter)" → kembali ke menu admin
+5. **Tidak valid ("tidak")** → "Pemanggilan fungsi ulang", yaitu rating diminta lagi lewat loop `while True` di `input_rating()`
 
-Input nama album
-Input nama artis
-Input rating, dicek dengan syarat 0 < rating ≤ 5
-Valid ("ya") → data masuk ke Album_Pop ("Menyimpan Data Baru Album") → "(Tekan Enter)" → kembali ke menu admin
-Tidak valid ("tidak") → "Pemanggilan fungsi ulang", yaitu rating diminta lagi lewat loop while True di input_rating()
+Di kode, mengetik `selesai` menghentikan penambahan, dan beberapa album bisa ditambahkan berturut-turut. Ini tidak digambar.
 
-Di kode, mengetik selesai menghentikan penambahan, dan beberapa album bisa ditambahkan berturut-turut. Ini tidak digambar.
+**3. Ubah Rating Album** → `ubah_rating()`
+1. Tabel tampil, lalu input nama album
+2. Input rating baru, dicek dengan syarat **0 < rating ≤ 5**
+3. **Valid ("ya")** → rating diperbarui → "(Tekan Enter)" → kembali ke menu admin
+4. **Tidak valid ("tidak")** → "Pemanggilan fungsi ulang"
 
-3. Ubah Rating Album → ubah_rating()
+Jika nama album tidak ditemukan, kode memanggil `ubah_rating()` lagi (rekursi).
 
-Tabel tampil, lalu input nama album
-Input rating baru, dicek dengan syarat 0 < rating ≤ 5
-Valid ("ya") → rating diperbarui → "(Tekan Enter)" → kembali ke menu admin
-Tidak valid ("tidak") → "Pemanggilan fungsi ulang"
+**4. Hapus Album** → `hapus_album()`
+1. Input nama album
+2. **Ditemukan ("ya")** → "Album berhasil dihapus" → "(Tekan Enter)" → kembali ke menu admin
+3. **Tidak ditemukan** → "Pemanggilan fungsi ulang", yaitu `hapus_album()` dipanggil lagi
 
-Jika nama album tidak ditemukan, kode memanggil ubah_rating() lagi (rekursi).
+**5. Log Out** → "Sampai jumpa, [username]! Anda telah logout." → **END**.
 
-4. Hapus Album → hapus_album()
+## 4. Alur User (hijau)
 
-Input nama album
-Ditemukan ("ya") → "Album berhasil dihapus" → "(Tekan Enter)" → kembali ke menu admin
-Tidak ditemukan → "Pemanggilan fungsi ulang", yaitu hapus_album() dipanggil lagi
+Menu user (1-3) memakai `MENU_USER`:
 
-5. Log Out → "Sampai jumpa, [username]! Anda telah logout." → END.
+**1. Lihat Daftar Album** → tabel tampil → "(Tekan Enter)" → kembali ke Daftar Menu User. User tidak bisa menambah, mengubah, atau menghapus album.
 
-4. Alur User (hijau)
+**2. Free Merchandise** → `merchandise_gratis()`
+1. Hitung mundur 5 detik (5, 4, 3, 2, 1) dengan `time.sleep(1)`
+2. `random.choice()` memilih satu dari T-shirt, Poster, Stiker, Topi, Mug
+3. Menampilkan merchandise yang didapat dan info klaim di website resmi
+4. "(Tekan Enter)" → kembali ke menu user
 
-Menu user (1-3) memakai MENU_USER:
+**3. Log Out** → **END**.
 
-1. Lihat Daftar Album → tabel tampil → "(Tekan Enter)" → kembali ke Daftar Menu User. User tidak bisa menambah, mengubah, atau menghapus album.
+## 5. Ringkasan
 
-2. Free Merchandise → merchandise_gratis()
-
-Hitung mundur 5 detik (5, 4, 3, 2, 1) dengan time.sleep(1)
-random.choice() memilih satu dari T-shirt, Poster, Stiker, Topi, Mug
-Menampilkan merchandise yang didapat dan info klaim di website resmi
-"(Tekan Enter)" → kembali ke menu user
-
-3. Log Out → END.
-
-5. Ringkasan
+```
 START → Menu Awal → 1. Login? ─tidak→ Keluar → END
                         │ ya
               Username & Password
@@ -125,6 +124,7 @@ START → Menu Awal → 1. Login? ─tidak→ Keluar → END
                        │                                │
         tiap aksi → Tekan Enter → menu     tiap aksi → Tekan Enter → menu
         Log Out → END                      Log Out → END
+```
 
 **C. Penjelasan Program dan Output**
 

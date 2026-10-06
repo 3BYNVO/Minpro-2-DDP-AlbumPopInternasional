@@ -1,5 +1,7 @@
 # Minpro-2-DDP-AlbumPopInternasional
-Muhammad Ihsan_A_009
+Nama: Muhammad Ihsan
+Kelas: A
+NIM:2609116009
 
 A. Deskripsi Singkat Program
 

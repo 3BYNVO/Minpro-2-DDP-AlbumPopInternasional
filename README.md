@@ -29,7 +29,7 @@ B. Flowchart
 
 C. Penjelasan Program dan Output
 
-Setiap bagian kode Program Album Pop (struktur data, validasi, login, menu, lihat, tambah, ubah rating, hapus, merchandise, logout, main) memiliki penjelasan dan output sebagai berikut.
+Setiap Bagian Kode Program Album Pop (struktur data, validasi, login, menu, lihat, tambah, ubah rating, hapus, merchandise, logout, main) memiliki penjelasan dan output sebagai berikut.
 
 ### 1. Struktur Data & Konfigurasi
 ```python

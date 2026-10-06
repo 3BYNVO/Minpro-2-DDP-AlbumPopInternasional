@@ -204,7 +204,7 @@ def merchandise_gratis():
 ```
 **Penjelasan:** Menampilkan hitung mundur 5 detik, lalu memilih satu merchandise secara acak (T-shirt, Poster, Stiker, Topi, atau Mug) dengan `random.choice`.
 
-**Output (contoh):**
+**Output:**
 
 <img width="742" height="222" alt="5doorprize user" src="https://github.com/user-attachments/assets/c52bc83e-9d4e-4365-8b6f-f9f86f607407" />
 

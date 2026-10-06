@@ -65,14 +65,8 @@ def input_rating(pesan): # menolak non-angka dan rating di luar 0 < rating <= 5
 **Penjelasan:** `input_teks` mengulang input jika kosong. `input_rating` memakai `try/except ValueError` untuk menangkap input non-angka, lalu mengecek rentang rating.
 
 **Output validasi:**
-```
-Tambahkan Artis :
-Input tidak boleh kosong, silakan ulangi.
-Rating Album: abc
-Rating harus berupa angka (contoh: 4.5), silakan ulangi.
-Rating Album: 7
-Rating harus lebih dari 0.0 dan maksimal 5.0, silakan ulangi.
-```
+
+<img width="457" height="326" alt="validasi tambah album" src="https://github.com/user-attachments/assets/e6d98f7d-51e9-46ee-adf5-ed3c2d99b517" />
 
 ### 3. Menu Awal & Login
 ```python
@@ -90,21 +84,8 @@ def login(): ...
 <img width="422" height="153" alt="7login admin" src="https://github.com/user-attachments/assets/4a3a0885-cede-47c2-99d4-18953136d573" />
 
 **Output login gagal (3 kali):**
-```
-=== AKUN NADA INTERNASIONAL ===
-Username : admin
-Password : *****
-Username atau password salah. Sisa percobaan: 2
 
-Username : admin
-Password : ****
-Username atau password salah. Sisa percobaan: 1
-
-Username : user
-Password : ***
-Login gagal 3 kali. Program ditutup.
-Terima kasih telah mendengarkan Nada Internasional!
-```
+<img width="531" height="296" alt="validasi login" src="https://github.com/user-attachments/assets/ae0f4896-aaa6-4a0f-a94a-e69e21066382" />
 
 ### 4. Menu Utama
 ```python
@@ -170,10 +151,8 @@ def ubah_rating():
 <img width="433" height="328" alt="11rating admin" src="https://github.com/user-attachments/assets/d1d0802e-ced7-4962-a6f7-28925a3d26cb" />
 
 **Output album tidak ditemukan:**
-```
-Masukkan Album yang ingin diubah ratingnya: abc
-Album 'abc' tidak ditemukan dalam daftar, input kembali.
-```
+
+<img width="441" height="322" alt="validasi rating" src="https://github.com/user-attachments/assets/83e68839-20c9-4a94-94d6-43642a0b6f9a" />
 
 ### 8. Hapus Album (Admin)
 ```python
@@ -189,10 +168,8 @@ def hapus_album():
 <img width="442" height="327" alt="12hapus admin" src="https://github.com/user-attachments/assets/597e6a83-1117-4f8e-9498-87dcde4ba8ec" />
 
 **Output album tidak ditemukan:**
-```
-Album yang akan dihapus dari daftar: xyz
-Album 'xyz' tidak ditemukan dalam daftar, input kembali.
-```
+
+<img width="436" height="323" alt="validasi hapus album" src="https://github.com/user-attachments/assets/d2bd3bf8-f471-4406-b0a2-d96cc23d27ad" />
 
 ### 9. Merchandise Gratis (User)
 ```python

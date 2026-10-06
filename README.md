@@ -209,9 +209,13 @@ def merchandise_gratis():
 <img width="742" height="222" alt="5doorprize user" src="https://github.com/user-attachments/assets/c52bc83e-9d4e-4365-8b6f-f9f86f607407" />
 
 ### 10. Logout & Keluar
-**Output logout:**
+**Output logout Admin:**
 
 <img width="536" height="235" alt="13logout admin" src="https://github.com/user-attachments/assets/a6bfa081-93e2-4736-8b52-569de754aacc" />
+
+**Output logout User:**
+
+<img width="547" height="187" alt="6logout user" src="https://github.com/user-attachments/assets/cfd8d1f6-975a-440e-9f2f-0f4d4ac8e306" />
 
 **Penjelasan:** Saat logout, `menu_utama` selesai (`return`), lalu `main()` mencetak pesan penutup dan program berakhir.
 

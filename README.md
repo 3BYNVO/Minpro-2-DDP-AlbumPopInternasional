@@ -31,6 +31,101 @@ Fitur pendukung: validasi input kosong (`input_teks`), validasi rating angka den
 
 **B. Flowchart**
 
+Flowchart dibagi menjadi tiga warna: abu-biru (awal & login), merah/salmon (role admin), dan hijau (role user).
+
+<img width="1982" height="1722" alt="Flowchart Nada  drawio" src="https://github.com/user-attachments/assets/9069c990-cffd-4865-a48c-a00819b8a538" />
+
+1. Awal & Login (abu-biru)
+
+START → Menu Awal. main() memanggil menu_awal(), yang membersihkan layar lalu menampilkan:
+
+Selamat datang di Nada Internasional Anda!
+1. Login
+2. Keluar
+
+Percabangan "1. Login"
+
+Ya (pilih 1) → login().
+Tidak → "2. Keluar" → END, dengan pesan "Terima kasih telah mendengarkan Nada Internasional!".
+Pilihan selain 1 dan 2 menampilkan "Pilihan tidak valid", lalu menu_awal() dipanggil lagi. Bagian ini tidak digambar.
+
+Input Username → Input Password. Username diubah ke huruf kecil (.lower()), dan password disembunyikan dengan * (pwinput). Datanya dicocokkan dengan dictionary Akun:
+
+admin / admin123 → role admin
+user / user123 → role user
+
+Login Gagal 1X → 2X → 3X. Setiap salah, program menampilkan sisa percobaan (2, lalu 1). Setelah 3 kali gagal (MAKS_PERCOBAAN_LOGIN = 3), muncul "Login gagal 3 kali. Program ditutup." lalu menuju END. Itu garis panjang dari "Login Gagal 3X" ke END.
+
+Jika berhasil, program mencetak "Login berhasil! Selamat datang..." dan login() mengembalikan (username, role).
+
+2. Percabangan Role
+python
+menu = MENU_ADMIN if role == "admin" else MENU_USER
+Role: Admin = ya → alur admin (merah).
+Tidak → Role: User (hijau).
+3. Alur Admin (merah)
+
+Menu admin (1-5) tampil, lalu flowchart mengecek pilihan berurutan dari 1 sampai 5. "Tidak" berarti lanjut ke pilihan berikutnya. Di kode, ini dilakukan lewat dictionary MENU_ADMIN.
+
+1. Lihat Daftar Album
+
+lihat_album() menampilkan tabel PrettyTable (No, Album, Artis, Rating).
+Lalu "(Tekan Enter) sebelum kembali ke menu" (jeda()), dan kembali ke Daftar Menu Admin.
+
+2. Tambah Album → tambah_album()
+
+Input nama album
+Input nama artis
+Input rating, dicek dengan syarat 0 < rating ≤ 5
+Valid ("ya") → data masuk ke Album_Pop ("Menyimpan Data Baru Album") → "(Tekan Enter)" → kembali ke menu admin
+Tidak valid ("tidak") → "Pemanggilan fungsi ulang", yaitu rating diminta lagi lewat loop while True di input_rating()
+
+Di kode, mengetik selesai menghentikan penambahan, dan beberapa album bisa ditambahkan berturut-turut. Ini tidak digambar.
+
+3. Ubah Rating Album → ubah_rating()
+
+Tabel tampil, lalu input nama album
+Input rating baru, dicek dengan syarat 0 < rating ≤ 5
+Valid ("ya") → rating diperbarui → "(Tekan Enter)" → kembali ke menu admin
+Tidak valid ("tidak") → "Pemanggilan fungsi ulang"
+
+Jika nama album tidak ditemukan, kode memanggil ubah_rating() lagi (rekursi).
+
+4. Hapus Album → hapus_album()
+
+Input nama album
+Ditemukan ("ya") → "Album berhasil dihapus" → "(Tekan Enter)" → kembali ke menu admin
+Tidak ditemukan → "Pemanggilan fungsi ulang", yaitu hapus_album() dipanggil lagi
+
+5. Log Out → "Sampai jumpa, [username]! Anda telah logout." → END.
+
+4. Alur User (hijau)
+
+Menu user (1-3) memakai MENU_USER:
+
+1. Lihat Daftar Album → tabel tampil → "(Tekan Enter)" → kembali ke Daftar Menu User. User tidak bisa menambah, mengubah, atau menghapus album.
+
+2. Free Merchandise → merchandise_gratis()
+
+Hitung mundur 5 detik (5, 4, 3, 2, 1) dengan time.sleep(1)
+random.choice() memilih satu dari T-shirt, Poster, Stiker, Topi, Mug
+Menampilkan merchandise yang didapat dan info klaim di website resmi
+"(Tekan Enter)" → kembali ke menu user
+
+3. Log Out → END.
+
+5. Ringkasan
+START → Menu Awal → 1. Login? ─tidak→ Keluar → END
+                        │ ya
+              Username & Password
+                        │
+        Gagal 3x → END     Berhasil → cek role
+                                        │
+                  Admin (1-5) ←─────────┴─────────→ User (1-3)
+                       │                                │
+        tiap aksi → Tekan Enter → menu     tiap aksi → Tekan Enter → menu
+        Log Out → END                      Log Out → END
+
 **C. Penjelasan Program dan Output**
 
 Setiap Bagian Kode Program Album Pop (struktur data, validasi, login, menu, lihat, tambah, ubah rating, hapus, merchandise, logout, main) memiliki penjelasan dan output sebagai berikut.

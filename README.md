@@ -5,7 +5,7 @@ Kelas: A
 
 NIM:2609116009
 
-**A. Deskripsi Singkat Program**
+## A. Deskripsi Singkat Program
 
 **Nada Internasional** adalah program berbahasa Python untuk mengelola daftar album pop internasional beserta rating-nya. Data disimpan dalam list `Album_Pop` (nama album, nama artis, rating).
 
@@ -29,13 +29,13 @@ Program memiliki sistem **login berbasis peran (role)** dengan batas 3 kali perc
 
 Fitur pendukung: validasi input kosong (`input_teks`), validasi rating angka dengan rentang lebih dari 0 sampai 5 (`input_rating`), pembersihan layar otomatis, dan hitung mundur 5 detik pada fitur merchandise teracak.
 
-**B. Flowchart**
+## B. Flowchart
 
 Flowchart dibagi menjadi tiga warna: abu-biru (awal & login), merah/salmon (role admin), dan hijau (role user).
 
 <img width="1982" height="1722" alt="Flowchart Nada  drawio" src="https://github.com/user-attachments/assets/9069c990-cffd-4865-a48c-a00819b8a538" />
 
-## 1. Awal & Login (abu-biru)
+**1. Awal & Login (abu-biru)**
 
 **START → Menu Awal.** `main()` memanggil `menu_awal()`, yang membersihkan layar lalu menampilkan:
 ```
@@ -57,7 +57,7 @@ Selamat datang di Nada Internasional Anda!
 
 **Jika berhasil**, program mencetak "Login berhasil! Selamat datang..." dan `login()` mengembalikan `(username, role)`.
 
-## 2. Percabangan Role
+**2. Percabangan Role**
 
 ```python
 menu = MENU_ADMIN if role == "admin" else MENU_USER
@@ -65,7 +65,7 @@ menu = MENU_ADMIN if role == "admin" else MENU_USER
 - **Role: Admin = ya** → alur admin (merah).
 - **Tidak** → Role: User (hijau).
 
-## 3. Alur Admin (merah)
+**3. Alur Admin (merah)**
 
 Menu admin (1-5) tampil, lalu flowchart mengecek pilihan berurutan dari 1 sampai 5. "Tidak" berarti lanjut ke pilihan berikutnya. Di kode, ini dilakukan lewat dictionary `MENU_ADMIN`.
 
@@ -111,7 +111,7 @@ Menu user (1-3) memakai `MENU_USER`:
 
 **3. Log Out** → **END**.
 
-## 5. Ringkasan
+**5. Ringkasan**
 
 ```
 START → Menu Awal → 1. Login? ─tidak→ Keluar → END
@@ -126,7 +126,7 @@ START → Menu Awal → 1. Login? ─tidak→ Keluar → END
         Log Out → END                      Log Out → END
 ```
 
-**C. Penjelasan Program dan Output**
+## C. Penjelasan Program dan Output
 
 Setiap Bagian Kode Program Album Pop (struktur data, validasi, login, menu, lihat, tambah, ubah rating, hapus, merchandise, logout, main) memiliki penjelasan dan output sebagai berikut.
 
